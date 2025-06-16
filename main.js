@@ -1,0 +1,77 @@
+// Guessing Game (While Loop)
+let randomNumber = Math.floor(Math.random() * 10) + 1;
+let guess;
+while (true) {
+  guess = parseInt(prompt("Guess a number between 1 and 10:"));
+  if (guess === randomNumber) {
+    alert("Congratulations! You guessed it!");
+    break;
+  } else {
+    alert("Incorrect guess. Please try again.");
+  }
+}
+// Password Validator (Do-While Loop)
+let password;
+let confirmPassword;
+do {
+  password = prompt("Please set your password:");
+  confirmPassword = prompt("Please confirm your password:");
+  if (password !== confirmPassword) {
+    alert("Passwords do not match. Please try again.");
+  }
+} while (password !== confirmPassword);
+alert("Password set successfully!");
+// Multiplication Table Generator (For Loop)
+let num = parseInt(prompt("Enter a number to generate its multiplication table:"));
+for (let i = 1; i <= 10; i++) {
+  console.log(`${num} x ${i} = ${num * i}`);
+}
+// Grade Evaluator (If-Else Statements)
+let score = parseInt(prompt("Enter your score (0-100):"));
+let grade;
+if (score >= 90 && score <= 100) {
+  grade = "A";
+} else if (score >= 80 && score <= 89) {
+  grade = "B";
+} else if (score >= 70 && score <= 79) {
+  grade = "C";
+} else if (score >= 60 && score <= 69) {
+  grade = "D";
+} else if (score >= 0 && score < 60) {
+  grade = "F";
+} else {
+  alert("Invalid score. Please enter a number between 0 and 100.");
+  grade = "Invalid";
+}
+if(grade !== "Invalid"){
+  alert(`Your grade is: ${grade}`);
+}
+// Day Finder (Switch Case)
+let dayNumber = parseInt(prompt("Enter a number between 1 and 7:"));
+let day;
+switch (dayNumber) {
+  case 1:
+    day = "Sunday";
+    break;
+  case 2:
+    day = "Monday";
+    break;
+  case 3:
+    day = "Tuesday";
+    break;
+  case 4:
+    day = "Wednesday";
+    break;
+  case 5:
+    day = "Thursday";
+    break;
+  case 6:
+    day = "Friday";
+    break;
+  case 7:
+    day = "Saturday";
+    break;
+  default:
+    day = "Invalid input";
+}
+alert(day);
