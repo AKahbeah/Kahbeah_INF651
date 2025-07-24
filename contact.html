@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact - Budget Buddy</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <h1>Contact Us</h1>
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Your Name">
+      <input type="email" id="email" placeholder="Your Email">
+      <textarea id="message" placeholder="Your Suggestion"></textarea>
+      <button type="submit">Submit</button>
+      <p id="contactError" class="error-msg"></p>
+      <p id="successMsg" style="color:green;"></p>
+    </form>
+  </main>
+
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+      const error = document.getElementById("contactError");
+      const success = document.getElementById("successMsg");
+
+      if (!name || !email.includes("@") || !message) {
+        error.textContent = "Please enter valid information.";
+        success.textContent = "";
+        return;
+      }
+
+      error.textContent = "";
+      success.textContent = "Thank you for your feedback!";
+      document.getElementById("contactForm").reset();
+    }
+  </script>
+</body>
+<footer>
+    <a href="index.html">Home</a> | <a href="about.html">About</a> |  <a href="services.html">Services</a> | <a href="history.html">Expense History</a>
+  </footer>
+</html>
